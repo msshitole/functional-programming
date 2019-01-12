@@ -1,11 +1,28 @@
 package functional.programming.in.action.chapt1;
 
-public class Apple {
+public class Apple  extends  Fruit{
 
     private String color;
-    private int weight;
+    private Integer weight;
+    private String country;
 
-    public Apple(String color, int weight) {
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Apple() {
+
+    }
+
+    public Apple(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Apple(String color, Integer weight) {
         this.color = color;
         this.weight = weight;
     }
@@ -18,21 +35,12 @@ public class Apple {
         this.color = color;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Apple{" +
-                "color='" + color + '\'' +
-                ", weight=" + weight +
-                '}';
     }
 
     public static boolean isGreenApple(Apple apple) {
@@ -41,5 +49,14 @@ public class Apple {
 
     public static boolean isHeavyApple(Apple apple) {
         return  apple.getWeight() >= 150;
+    }
+
+    @Override
+    public String toString() {
+        return "\nApple{" +
+                "color='" + color + '\'' +
+                ", weight=" + weight +
+                ", country='" + country + '\'' +
+                '}';
     }
 }
